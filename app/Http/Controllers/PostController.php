@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -13,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $elements = Post::all();
+        return view ('welcome', compact('elements'));
     }
 
     /**
@@ -45,7 +47,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $element = Post::findOrFail($id);
+        return view ('post-show', compact('element'));
     }
 
     /**

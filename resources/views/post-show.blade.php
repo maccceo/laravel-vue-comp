@@ -69,27 +69,16 @@
     </head>
     <body>
     
-    @include('components.comp1')
     @include('components.post-viewer')
-    
-      {{-- ESERCIZIO 1 --}}
-      {{-- #app collegato all'oggetto Vue in app.js --}}
-      <div id="app">
-        {{-- questo lo trovo nella view components.comp1 --}}
-{{--         <distance-converter
-          :title='"Convertitore Km/m"'
-          :footer='"un saluto!"'
-        ></distance-converter> --}}
-      </div>
 
       {{-- ESERCIZIO 2 --}}
       <div id="posts">
-        @foreach($elements as $element)
           <post-viewer
             :title="'{{ $element -> title }}'" 
             :author="'{{ $element -> author }}'" 
+            :content="'{{ $element -> content }}'" 
+            :id="{{ $element -> id }}" 
           ></post-viewer>
-        @endforeach
       </div>
 
 

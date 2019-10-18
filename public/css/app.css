@@ -10644,3 +10644,7 @@ a.text-dark:focus {
   }
 }
 
+.box {
+  border: 1px solid black;
+}
+
